@@ -8,12 +8,13 @@
  */
 package io.github.nixtabyte.telegram.jtelebot.response.json;
 
-import io.github.nixtabyte.telegram.jtelebot.mapper.json.MapperHandler;
-
 import java.util.Arrays;
 
 import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
+
+import io.github.nixtabyte.telegram.jtelebot.mapper.json.MapperHandler;
 
 /**
  *
@@ -21,6 +22,8 @@ import org.codehaus.jackson.annotate.JsonProperty;
  *
  * @since 0.0.1
  */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Message {
 	/**
 	 * Unique message identifier

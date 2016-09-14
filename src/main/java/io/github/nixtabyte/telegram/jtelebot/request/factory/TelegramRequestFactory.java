@@ -71,6 +71,7 @@ public final class TelegramRequestFactory {
 		basicNameValuePair.add(new BasicNameValuePair("chat_id",String.valueOf(chatId)));
 		basicNameValuePair.add(new BasicNameValuePair("text",text));
 		basicNameValuePair.add(new BasicNameValuePair("disable_web_page_preview",String.valueOf(disableWebPagePreview)));
+		basicNameValuePair.add(new BasicNameValuePair("parse_mode", "html"));
 		TelegramRequestFactory.addIfNotNull("reply_to_message_id",replyToMessageId,basicNameValuePair);
 		TelegramRequestFactory.addIfNotNull("reply_markup",customReplyKeyboard,basicNameValuePair);
 		return new TelegramRequest(RequestType.SEND_MESSAGE,basicNameValuePair);
@@ -111,6 +112,7 @@ public final class TelegramRequestFactory {
 	public static TelegramRequest createSendPhotoRequest(final long chatId,final File inputFile, final String caption, final Long replyToMessageId, final CustomReplyKeyboard customReplyKeyboard) throws   JsonParsingException{
 		List <BasicNameValuePair>basicNameValuePair = new ArrayList<BasicNameValuePair>();
 		basicNameValuePair.add(new BasicNameValuePair("chat_id",String.valueOf(chatId)));
+        basicNameValuePair.add(new BasicNameValuePair("parse_mode", "html"));
 		TelegramRequestFactory.addIfNotNull("caption",caption,basicNameValuePair);
 		TelegramRequestFactory.addIfNotNull("reply_to_message_id",replyToMessageId,basicNameValuePair);
 		TelegramRequestFactory.addIfNotNull("reply_markup",customReplyKeyboard,basicNameValuePair);

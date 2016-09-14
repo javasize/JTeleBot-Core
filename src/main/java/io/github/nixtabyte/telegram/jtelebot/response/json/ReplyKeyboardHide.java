@@ -9,6 +9,7 @@
  */
 package io.github.nixtabyte.telegram.jtelebot.response.json;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 /**
 *
@@ -16,13 +17,14 @@ import org.codehaus.jackson.annotate.JsonProperty;
 *
 * @since 0.0.1
 */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReplyKeyboardHide implements CustomReplyKeyboard{
 
 	/**
 	 * Requests clients to hide the custom keyboard
 	 * */
 	@JsonProperty("hide_keyboard")
-	private Boolean hideKeyboard;
+	private Boolean hideKeyboard=true;
 
 	/**
 	 * Optional. Use this parameter if you want to hide keyboard for specific
@@ -35,7 +37,7 @@ public class ReplyKeyboardHide implements CustomReplyKeyboard{
 	 * the keyboard with poll options to users who haven't voted yet.
 	 * */
 	@JsonProperty("selective")
-	private Boolean selective;
+	private Boolean selective=false;
 	/**
 	 * <p>isHideKeyboard.</p>
 	 *

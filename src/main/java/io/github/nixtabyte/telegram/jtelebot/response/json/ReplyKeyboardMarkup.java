@@ -11,6 +11,7 @@ package io.github.nixtabyte.telegram.jtelebot.response.json;
 
 import java.util.Arrays;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 /**
 *
@@ -18,6 +19,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 *
 * @since 0.0.1
 */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReplyKeyboardMarkup implements CustomReplyKeyboard{
 
 	/**
